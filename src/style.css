@@ -391,7 +391,7 @@ body.modal-open {
 
 .reports-header h2 {
   margin: 0;
-  color: var(--text);
+  color: white;
 }
 
 .reports-header p {
