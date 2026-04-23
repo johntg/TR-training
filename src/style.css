@@ -145,9 +145,9 @@ body.dark-mode .main-header {
   /* background: #1f2937; */
   background: linear-gradient(
     180deg,
-    rgba(0, 51, 87, 1) 0%,
-    rgba(0, 51, 87, 1) 98%,
-    rgba(143, 0, 0, 1) 98%
+    rgb(119, 2, 66) 0%,
+    rgb(155, 6, 103) 98%,
+    rgb(237, 229, 6) 98%
   );
 }
 /* body.dark-mode .main-header h1 {
