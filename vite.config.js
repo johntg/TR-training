@@ -1,8 +1,8 @@
 import { defineConfig, loadEnv } from "vite";
 
 function normalizeBasePath(basePath) {
-  if (!basePath || basePath === "/") {
-    return "/";
+  if (!basePath || basePath === "/TR-training") {
+    return "/TR-training";
   }
 
   const withLeadingSlash = basePath.startsWith("/") ? basePath : `/${basePath}`;
