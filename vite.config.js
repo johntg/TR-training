@@ -1,8 +1,8 @@
 import { defineConfig, loadEnv } from "vite";
 
 function normalizeBasePath(basePath) {
-  if (!basePath || basePath === "/TR-training") {
-    return "/TR-training";
+  if (!basePath || basePath === "/") {
+    return "/";
   }
 
   const withLeadingSlash = basePath.startsWith("/") ? basePath : `/${basePath}`;
@@ -14,11 +14,10 @@ function normalizeBasePath(basePath) {
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
   const apiUrl = env.VITE_APPS_SCRIPT_URL || "";
-  const base = normalizeBasePath(
-    mode === "development"
-      ? env.VITE_DEV_BASE_PATH || "/"
-      : env.VITE_BASE_PATH || "/",
-  );
+
+  // FIX: Explicitly set base to '/TR-training/' for production
+  // Use '/' for development to keep the dev server working correctly
+  const base = mode === "production" ? "/TR-training/" : "/";
 
   let server;
   try {
