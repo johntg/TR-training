@@ -78,7 +78,6 @@
   line-height: 1em;
   margin: 0 0 1rem;
   text-align: left;
-  text-transform: uppercase;
 }
 
 .login-splash h2 {
@@ -136,6 +135,7 @@
   font-weight: 300;
   margin: 0;
   letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 
 body.dark-mode .card {
