@@ -136,7 +136,7 @@ export function createCardsRenderer({
           </div>
 
           <div style="padding: 18px;">
-            ${renderEditableCardField(row, "name", "h2", "margin: 0; font-size: 1.6rem;")}
+            ${renderEditableCardField(row, "name", "h2", "margin: 0; font-size: 1.6rem;  color: var(--text-muted);")}
             ${renderEditableCardField(row, "position", "p", "color: var(--text-muted); margin: 4px 0;")}
             <p style="color: var(--unit-soft); font-weight: bold;">${row.unit}</p>
 
