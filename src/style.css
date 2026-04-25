@@ -1192,7 +1192,7 @@ select {
 .form-message {
   min-height: 1.25rem;
   margin: 0 0 12px;
-  color: var(--text-muted);
+  color: white;
 }
 
 .form-message.error {
