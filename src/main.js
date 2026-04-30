@@ -881,7 +881,10 @@ function renderLogin() {
     message.textContent = "Sending sign-in link...";
     message.classList.remove("error");
 
-    const redirectTo = `${window.location.origin}${import.meta.env.BASE_URL}`;
+    // const redirectTo = `${window.location.origin}${import.meta.env.BASE_URL}`;
+    const redirectTo = import.meta.env.DEV
+      ? "http://localhost:5173/TR-training/"
+      : `${window.location.origin}${import.meta.env.BASE_URL}`;
 
     const { error } = await supabase.auth.signInWithOtp({
       email,
