@@ -156,6 +156,38 @@ export function createCardsRenderer({
     });
   }
 
+  function getReleaseCheckTitle(groupKey) {
+    if (groupKey === "ward support") {
+      return "Previous ward support release check";
+    }
+
+    if (groupKey === "bishopric") {
+      return "Previous bishopric release check";
+    }
+
+    if (groupKey === "elders quorum") {
+      return "Previous Elders Quorum presidency release check";
+    }
+
+    if (groupKey === "relief society") {
+      return "Previous Relief Society presidency release check";
+    }
+
+    if (groupKey === "primary") {
+      return "Previous Primary presidency release check";
+    }
+
+    if (groupKey === "young women") {
+      return "Previous Young Women presidency release check";
+    }
+
+    if (groupKey === "young men") {
+      return "Previous Young Men presidency release check";
+    }
+
+    return "Previous presidency release check";
+  }
+
   function renderReleaseCheck(row) {
     console.log("CALL:", row.name, getCallingGroupKey(row.position));
     console.log("MATCHES:", getRelatedReleaseChecks(row));
