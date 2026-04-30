@@ -139,6 +139,10 @@
   text-transform: uppercase;
 }
 
+.releaseCheck {
+  color: var(--releaseCheckClr);
+}
+
 body.dark-mode .card {
   background-color: #111827 !important;
 }
