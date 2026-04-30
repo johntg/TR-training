@@ -41,7 +41,7 @@
   --chip-selected-text: #ffffff;
   --login-recordClr: #fff8be;
   --recordClr: #e55000;
-  --check-release: #384647;
+  --releaseCheck: #384647;
   --card-bg: #000000; /* The card itself is now black */
   --block-pending: #eef7fb; /* Keeping your soft blue blocks */
   --block-done: #d5e9f4; /* Keeping your "done" blue blocks */
@@ -258,7 +258,7 @@ body.dark-mode {
   --banner-call-text: #e8f2ff;
   --banner-release-bg: hsl(190, 100%, 29%);
   --banner-release-text: #fff3c4;
-  --check-release: #82b5b9;
+  --releaseCheck: #82b5b9;
   --btn2text: #333;
   --recordClr: #fff8be;
   background: var(--bg-muted);

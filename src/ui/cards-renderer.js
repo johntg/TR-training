@@ -205,7 +205,7 @@ export function createCardsRenderer({
               <div>
                 ${done ? "✅" : "❌"}
                 ${escapeHtml(release.name || "(No name)")} — ${escapeHtml(release.position || "(No position)")}
-                <span style="color: var(--check-release);">&nbsp;Release interview ${done ? "done" : "pending"}</span>
+                <span style="color: var(--releaseCheck);">&nbsp;Release interview ${done ? "done" : "pending"}</span>
               </div>
             `;
           })
