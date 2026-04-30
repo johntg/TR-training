@@ -20,8 +20,6 @@ export function createCardsRenderer({
     );
   }
 
-  console.log("cards-renderer.js loaded");
-
   function renderEditableCardField(row, field, tagName, style) {
     const label =
       field === "name"
@@ -189,8 +187,6 @@ export function createCardsRenderer({
   }
 
   function renderReleaseCheck(row) {
-    console.log("CALL:", row.name, getCallingGroupKey(row.position));
-    console.log("MATCHES:", getRelatedReleaseChecks(row));
     const groupKey = getCallingGroupKey(row.position);
     const relatedReleases = getRelatedReleaseChecks(row);
 
@@ -200,8 +196,8 @@ export function createCardsRenderer({
 
     return `
     <div style="margin: 10px 0; padding: 10px; border-radius: 10px; background: var(--warning-soft); border: 1px solid var(--border);">
-      <div style="font-weight: 800; margin-bottom: 6px;">${getReleaseCheckTitle(groupKey)}</div>
-      <div style="display: grid; gap: 6px; font-size: 0.9rem;">
+      <div class="releaseCheck" style="font-weight: 800; margin-bottom: 6px;">${getReleaseCheckTitle(groupKey)}</div>
+      <div class="releaseCheck"  style="display: grid; gap: 6px; font-size: 0.9rem;">
         ${relatedReleases
           .map((release) => {
             const done = isCompletedValue(release.interviewed);
@@ -209,7 +205,7 @@ export function createCardsRenderer({
               <div>
                 ${done ? "✅" : "❌"}
                 ${escapeHtml(release.name || "(No name)")} — ${escapeHtml(release.position || "(No position)")}
-                <span style="color: var(--text-muted);">Release interview ${done ? "done" : "pending"}</span>
+                <span style="color: var(--check-release);">&nbsp;Release interview ${done ? "done" : "pending"}</span>
               </div>
             `;
           })
@@ -245,7 +241,6 @@ export function createCardsRenderer({
 
     list.innerHTML = rowsToRender
       .map((row) => {
-        console.log("ROW TYPE:", row.name, `"${row.type}"`);
         const canAssign = hasAdminPasswordAccess();
         const isExpanded = appState.expandedGridId === row.id;
         const isRelease =
@@ -544,7 +539,7 @@ export function createCardsRenderer({
   ${renderReleaseCheck(row)}
 
   <div style="margin-bottom: 10px;">
-    <label style="display: block; font-size: 0.75rem; color: var(--text-muted); font-weight: bold; margin-bottom: 6px; text-transform: uppercase;">Sustaining assigned to</label>44
+    <label style="display: block; font-size: 0.75rem; color: var(--text-muted); font-weight: bold; margin-bottom: 6px; text-transform: uppercase;">Sustaining assigned to</label>
 
                     <select
                         onchange="window.updateAssignment('${row.id}', '${sustainingByField}', this.value)"
